@@ -8,14 +8,14 @@ option objc_class_prefix = "SLD";
 
 package saludo;
 
-// Definición del servicio Saludar.
+// Definicion del servicio Saludar.
 service Saludar {
   // Saluda
   rpc Saludo (SaludoRequest) returns (SaludoResponse) {}
   rpc SaludoOtraVez (SaludoRequest) returns (SaludoResponse) {}
 }
 
-// El mensaje que se enviará al servidor.
+// El mensaje que se enviara al servidor.
 message SaludoRequest{
   string nombre = 1;
   string apellido1 = 2;
@@ -23,7 +23,7 @@ message SaludoRequest{
   string dni = 4;
 }
 
-// El mensaje que devolverá el servidor
+// El mensaje que devolvera el servidor
 message SaludoResponse {
   string message = 1;
 }
