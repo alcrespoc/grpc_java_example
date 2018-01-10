@@ -1,0 +1,29 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "es.giiis.aos.grpc.saludos";
+option java_outer_classname = "SaludoProto";
+option objc_class_prefix = "SLD";
+
+package saludo;
+
+// Definición del servicio Saludar.
+service Saludar {
+  // Saluda
+  rpc Saludo (SaludoRequest) returns (SaludoResponse) {}
+  rpc SaludoOtraVez (SaludoRequest) returns (SaludoResponse) {}
+}
+
+// El mensaje que se enviará al servidor.
+message SaludoRequest{
+  string nombre = 1;
+  string apellido1 = 2;
+  string apellido2 = 3;
+  string dni = 4;
+}
+
+// El mensaje que devolverá el servidor
+message SaludoResponse {
+  string message = 1;
+}
